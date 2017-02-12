@@ -65,6 +65,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <state key="normal" title="Choose Image"/>
+                                <connections>
+                                    <action selector="chooseImageDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xSA-NK-Fq7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VH-LI-vpa">
                                 <rect key="frame" x="16" y="338" width="343" height="30"/>
