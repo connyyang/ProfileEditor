@@ -17,6 +17,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSString * firstName = [defaults objectForKey:@"firstName"];
+    NSString * lastName = [defaults objectForKey:@"lastName"];
+    NSString * address = [defaults objectForKey:@"address"];
+    NSData * imgData = [defaults objectForKey:@"imgData"];
+    UIImage * image = [UIImage imageWithData:imgData];
+    
+    self.firstNameText.text = firstName;
+    self.lastNameText.text = lastName;
+    self.addressText.text = address;
+    self.profileImage.image = image;
+    
+    NSLog(@"View did Load");
+    
 }
 
 
@@ -46,7 +61,23 @@
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
-- (IBAction)saveProfile:(id)sender {
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
     [self dismissViewControllerAnimated:true completion:nil];
+}
+
+- (IBAction)saveProfile:(id)sender {
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSData * imgData = UIImagePNGRepresentation(self.profileImage.image);
+    
+    [defaults setObject:self.firstNameText.text forKey:@"firstName"];
+    [defaults setObject:self.lastNameText.text forKey:@"lastName"];
+    [defaults setObject:self.addressText.text forKey:@"address"];
+    [defaults setObject:imgData forKey:@"imgData"];
+    
+    [defaults synchronize];
+    
+    
 }
 @end
