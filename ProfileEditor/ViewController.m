@@ -78,6 +78,12 @@
     
     [defaults synchronize];
     
-    
+    // Add Alert Action after saving
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Congratulations!" message:@"Your Profile Information is been saved!" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction * action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [alertController dismissViewControllerAnimated:true completion:nil];
+    }];
+    [alertController addAction:action];
+    [self presentViewController:alertController animated:true completion:nil];
 }
 @end
