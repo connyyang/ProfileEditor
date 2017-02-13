@@ -35,4 +35,18 @@
     [self presentViewController:picker animated:true completion:nil];
     
 }
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
+    if(!img) img = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    self.profileImage.image = img;
+    
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
+- (IBAction)saveProfile:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
 @end

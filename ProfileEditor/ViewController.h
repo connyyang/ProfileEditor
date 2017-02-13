@@ -12,5 +12,15 @@
 
 - (IBAction)chooseImageDidTap:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+
+@property (weak, nonatomic) IBOutlet UITextField *firstNameText;
+
+@property (weak, nonatomic) IBOutlet UITextField *lastNameText;
+
+@property (weak, nonatomic) IBOutlet UITextField *addressText;
+
+- (IBAction)saveProfile:(id)sender;
+
 @end
 

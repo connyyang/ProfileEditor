@@ -77,6 +77,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tSd-2o-Dtw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.61009355353180472" green="0.607146241678994" blue="0.61304086538461533" alpha="1" colorSpace="calibratedRGB"/>
@@ -99,6 +102,12 @@
                             <constraint firstItem="8Ub-Am-GCL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="xdo-O2-64g"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressText" destination="8Ub-Am-GCL" id="Qdw-GZ-XV7"/>
+                        <outlet property="firstNameText" destination="u9Q-AW-J9e" id="Qfa-ph-5ri"/>
+                        <outlet property="lastNameText" destination="Ax7-uQ-t5C" id="VK4-WS-cah"/>
+                        <outlet property="profileImage" destination="sQ5-Sw-JFW" id="Gho-7Q-BDW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
